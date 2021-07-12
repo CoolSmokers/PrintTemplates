@@ -63,9 +63,9 @@ Set any of the options in this section from 'false' to 'true' in order to enable
 {% set alt_barcode_horizontal = '0px' %}
 
 
-{# Small Label (1.25x1.00) settings #}
+{# Small Label (1.5x0.50) settings #}
 
-{% set small_description_font_size = '9pt' %}       {# Default is 9pt #}
+{% set small_description_font_size = '8pt' %}       {# Default is 8pt #}
 {% set small_price_font_size = '7pt' %}             {# Default is 7pt #}
 
 {# Use the following if adjustments to the label position are needed. Positive and negative numbers work #}
