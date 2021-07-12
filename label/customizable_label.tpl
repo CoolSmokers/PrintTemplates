@@ -106,6 +106,25 @@ Set any of the options in this section from 'false' to 'true' in order to enable
 {% set jewelry_barcode_vertical = '0px' %}
 {% set jewelry_barcode_horizontal = '0px' %}
 
+{# Med Label (1.5x0.5) settings #}
+
+{% set med_description_font_size = '8pt' %}       {# Default is 8pt #}
+{% set med_price_font_size = '7pt' %}             {# Default is 7pt #}
+
+{# Use the following if adjustments to the label position are needed. Positive and negative numbers work #}
+
+{% set med_top_margin = '0px' %}
+{% set med_right_margin = '0px' %}
+{% set med_bottom_margin = '0px' %}
+{% set med_left_margin = '0px' %}
+
+{# For Vertical:   Negative numbers move up, positive move down
+   For Horizontal: Negative numbers move right, positive move left #}
+
+{% set med_barcode_vertical = '0px' %}
+{% set med_barcode_horizontal = '0px' %}
+
+
 
 {#
                             ***End Custom Options***
@@ -179,6 +198,25 @@ Set any of the options in this section from 'false' to 'true' in order to enable
         left: {{ small_barcode_horizontal * -1 }}px;
     }
 
+ {# Med Label (1.5x0.5) CSS settings #}
+
+    .label.size150x50 .custom_margin {
+        margin: {{small_top_margin}} {{small_right_margin}} {{small_bottom_margin}} {{small_left_margin}};
+    }
+
+    .label.size150x50 .description {
+        font-size: {{ med_description_font_size }};
+    }
+
+    .label.size150x50 .price {
+        font-size: {{ med_price_font_size }};
+    }
+
+    .label.size150x50 .barcode {
+        position: absolute;
+        bottom: {{ med_barcode_vertical * -2 }}px;
+        left: {{ med_barcode_horizontal * -5 }}px;
+    }
     {# Jewelry Label (2.20x.50) CSS settings #}
 
     .label.size220x50 .custom_margin {
